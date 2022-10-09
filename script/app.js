@@ -41,7 +41,7 @@ function checkpas(){
 
 function enableListeners() {
     //when the password input loses focus
-    password.input.addEventListener('input', function () {
+    password.input.addEventListener('blur', function () {
         if (!(isValidPassword(password.input.value))) {
         password.errorMessage.innerText = 'invaled';
         password.input.addEventListener('input',checkpas)
@@ -49,7 +49,7 @@ function enableListeners() {
         } 
     });
     //when the email input loses focus
-    email.input.addEventListener('input', function () {
+    email.input.addEventListener('blur', function () {
         if (!isValidEmailAddress(email.input.value)) {
         if (isEmpty(email.input.value)) {
             email.errorMessage.innerText = 'Pleas fill in your email';
