@@ -41,7 +41,7 @@ function checkpas(){
 
 function enableListeners() {
     //when the password input loses focus
-    password.input.addEventListener('blur', function () {
+    password.input.addEventListener('input', function () {
         if (!(isValidPassword(password.input.value))) {
         password.errorMessage.innerText = 'invaled';
         password.input.addEventListener('input',checkpas)
@@ -49,7 +49,7 @@ function enableListeners() {
         } 
     });
     //when the email input loses focus
-    email.input.addEventListener('blur', function () {
+    email.input.addEventListener('input', function () {
         if (!isValidEmailAddress(email.input.value)) {
         if (isEmpty(email.input.value)) {
             email.errorMessage.innerText = 'Pleas fill in your email';
@@ -94,7 +94,7 @@ const isEmpty = function (fieldValue) {
 };
 
 const isValidPassword = function (paswoord) {
-    return paswoord.length > 1;
+    return paswoord.length > 3;
 };
 
 function getDOMElements() {
